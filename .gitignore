@@ -1,0 +1,108 @@
+# =========================
+# Python / Backend
+# =========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+env/
+venv/
+.venv/
+ENV/
+
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# FastAPI / Python tooling
+.pdm-python
+
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# =========================
+# macOS
+# =========================
+
+.DS_Store
+
+
+# =========================
+# iOS / Xcode
+# =========================
+
+# Xcode user-specific files
+xcuserdata/
+*.xcuserstate
+
+# Xcode build products
+DerivedData/
+build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# iOS provisioning / signing
+*.mobileprovision
+*.cer
+*.p12
+
+# Xcode generated files
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+
+# =========================
+# Secrets
+# =========================
+
+*.pem
+*.key
