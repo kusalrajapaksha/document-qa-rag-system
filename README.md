@@ -76,6 +76,11 @@ python -m pytest tests/ -v
 
 For a physical iPhone, configure the Mac's reachable local network address instead of `127.0.0.1`. Configure transport security appropriately for your development environment.
 
+<img width="603" height="1311" alt="Screenshot iPhone 18 Pro 2026-10-22 at 23 58 55" src="https://github.com/user-attachments/assets/099db7fd-2aa8-4aca-8ded-6cff11127e18" />
+
+<img width="603" height="1311" alt="Screenshot iPhone 18 Pro 2026-10-22 at 23 48 57" src="https://github.com/user-attachments/assets/183b6a70-4582-4bc0-8662-3ee087b7aa57" />
+
+
 ## Limitations
 
 - Answer quality depends on retrieval quality and the selected language model.
