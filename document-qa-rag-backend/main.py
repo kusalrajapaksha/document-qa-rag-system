@@ -120,7 +120,7 @@ async def index_document(
         raise HTTPException(status_code=400, detail="Invalid file type. Only PDF files are allowed.")
 
     file_bytes = await file.read()
-    
+        
     if not file_bytes:
         raise HTTPException(status_code=400, detail="Empty PDF file.")
 
@@ -147,7 +147,7 @@ async def index_document(
         
         document_id = str(uuid4())
         
-        count = store_chunks(document_id=document_id, chunks=valid_chunks, embeddings=embeddings)
+        count = store_chunks(document_id=document_id, chunks=valid_chunks, embeddings=embeddings, filename=file.filename or "Untitled PDF")
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing PDF file: {str(e)}")

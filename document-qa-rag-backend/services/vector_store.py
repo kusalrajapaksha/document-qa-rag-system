@@ -13,6 +13,7 @@ def store_chunks(
     document_id: str,
     chunks: list[dict],
     embeddings,
+    filename: str = "Untitled PDF"
 ) -> int:
     """Persist chunks and their precomputed embeddings."""
     
@@ -36,7 +37,8 @@ def store_chunks(
                 "document_id": document_id,
                 "chunk_id": chunk["chunk_id"],
                 "page_number": chunk["page_number"],
-                "word_count": chunk["word_count"]
+                "word_count": chunk["word_count"],
+                "filename": filename
             }
             for chunk in valid_chunks
         ]
@@ -118,6 +120,7 @@ def search_stored_chunks(
             "chunk_id": metadata["chunk_id"],
             "page_number": metadata["page_number"],
             "word_count": metadata["word_count"],
+            "filename": metadata["filename"],
             "text": chunk_text,
             "similarity_score": round(1 - distance, 4),
         })
@@ -145,6 +148,7 @@ def list_stored_documents() -> list[dict]:
         if document_id not in documents:
             documents[document_id] = {
                 "document_id": document_id,
+                "filename": metadata.get("filename", "Untitled PDF"),
                 "chunk_count": 0,
                 "pages": set(),
             }
@@ -157,6 +161,7 @@ def list_stored_documents() -> list[dict]:
             "document_id": document["document_id"],
             "chunk_count": document["chunk_count"],
             "page_count": len(document["pages"]),
+            "filename": document["filename"],
         }
         for document in documents.values()
     ]
